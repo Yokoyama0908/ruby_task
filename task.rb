@@ -142,8 +142,11 @@ def q16
   ]
 
   # 以下に回答を記載
-  
-
+  users.each do |user|
+    p "私の名前は#{user[:name]}です。年齢は#{user[:age]}歳です。"
+  end
+  # eachは繰り返し処理に使う
+  # mapは繰り返し処理の結果を配列にしたい時に使う
 end
 
 class UserQ17
