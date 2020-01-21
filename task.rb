@@ -5,7 +5,7 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names.push("斎藤")
+  names.<<("斎藤")
   p names
 
 end
@@ -46,9 +46,8 @@ def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-  array = numbers1.map do |n| n * 10 end
-  
-  p array
+  number2 = numbers1.map { |i| i * 10}
+  p number2
 end
 
 def q7
@@ -85,9 +84,9 @@ def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-  foods.each do |uni|
-    food = uni.include?("うに") ? "#{uni}: 好物です" : "#{uni}: まぁまぁ好きです"
-    puts food
+  foods.each do |food|
+    a = food.include?("うに") ? "#{food}: 好物です" : "#{food}: まぁまぁ好きです"
+    puts a
   end
 end
 
@@ -95,14 +94,17 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-
+  sport = sports.flatten
+  sport.map.with_index(1) do |s, i|
+    puts "No#{i} #{s}"
+  end
 end
 
 def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-
+  p data[:user][:name] #シンボルなら ""　,キーなら:name(name:ではない)
 end
 
 def q13
@@ -110,14 +112,15 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-
+  user_data2 = user_data.merge(update_data)
+  p user_data2
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-
+  p data.keys
 end
 
 def q15
@@ -125,6 +128,8 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
+  p data1.keys.include?(:age) ? "OK" : "NG"
+  p data2.keys.include?(:age) ? "OK" : "NG"
 
 end
 
@@ -137,6 +142,7 @@ def q16
   ]
 
   # 以下に回答を記載
+  
 
 end
 
