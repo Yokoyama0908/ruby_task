@@ -85,8 +85,7 @@ def q10
 
   # 以下に回答を記載
   foods.each do |food|
-    a = food.include?("うに") ? "#{food}: 好物です" : "#{food}: まぁまぁ好きです"
-    puts a
+    puts food.include?("うに") ? "#{food}: 好物です" : "#{food}: まぁまぁ好きです"
   end
 end
 
@@ -95,7 +94,7 @@ def q11
 
   # 以下に回答を記載
   sport = sports.flatten
-  sport.map.with_index(1) do |s, i|
+  sport.each.with_index(1) do |s, i|
     puts "No#{i} #{s}"
   end
 end
